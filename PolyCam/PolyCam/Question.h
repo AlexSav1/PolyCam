@@ -21,4 +21,9 @@
 @property double sadness;
 @property double surprise;
 
+@property double angerPercentage;
+@property double contemptPercentage;
+@property double fearPercentage;
+@property double surprisePercentage;
+
 @end
