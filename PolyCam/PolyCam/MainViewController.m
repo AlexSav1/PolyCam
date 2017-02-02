@@ -7,6 +7,9 @@
 //
 
 #import "MainViewController.h"
+#import "CamViewController.h"
+#import "StatViewController.h"
+
 
 @interface MainViewController ()
 
@@ -17,15 +20,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // Create the two VCs- camVC & statVC
+    CamViewController *camVC = [[CamViewController alloc]init];
+    StatViewController *statVC = [[StatViewController alloc]init];
+    
+    [self addChildViewController:camVC];
+    [self.scrollView addSubview: camVC.view];
+    [camVC didMoveToParentViewController:self];
+    // camVC.view.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self addChildViewController:statVC];
+    [self.scrollView addSubview: statVC.view];
+    [statVC didMoveToParentViewController:self];
+    // statVC.view.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    // Shift Stat VC
+    CGRect statFrame = statVC.view.frame;
+    statFrame.origin.x = self.view.frame.size.width;
+    statVC.view.frame = statFrame;
+
+    self.scrollView.contentSize = CGSizeMake((self.view.frame.size.width * 2), self.view.frame.size.height);
+    
+
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //
