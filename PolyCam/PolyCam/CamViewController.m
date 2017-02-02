@@ -17,7 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    UIImage *snapBtnImage = [UIImage imageNamed:@"snapBtn.png"];
+    [self.snapBtn setImage:snapBtnImage forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -28,6 +30,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    // Adjust on-screen assets
+    self.logoWithText.image = [self.logoWithText.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.logoWithText.tintColor = [UIColor whiteColor];
     
     self.captureSession = [[AVCaptureSession alloc]init];
     self.captureSession.sessionPreset = AVCaptureSessionPreset1920x1080;
@@ -46,8 +52,6 @@
         if ([self.captureSession canAddOutput:self.imageOutput]) {
             [self.captureSession addOutput:self.imageOutput];
             
-            self.previewLayer.backgroundColor = [[UIColor yellowColor] CGColor];
-            self.cameraView.layer.backgroundColor = [[UIColor blueColor] CGColor];
             self.previewLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:self.captureSession];
             [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspect];
             [self.previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
