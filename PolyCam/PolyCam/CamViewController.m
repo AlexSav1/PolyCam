@@ -61,10 +61,30 @@
             [self.captureSession startRunning];
         }
     }
-    
+}
 
+- (void)didTakePhoto {
+    AVCaptureConnection *videoConnection = nil;
     
+    for (AVCaptureConnection *connection in self.imageOutput.connections) {
+        for (AVCaptureInputPort *inputPort in [connection inputPorts]) {
+            if ([[inputPort mediaType] isEqual:AVMediaTypeVideo]) {
+                videoConnection = connection;
+                break;
+            }
+        }
+        if (videoConnection) {
+            break;
+        }
+    }
     
+    [self.imageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
+        if (imageDataSampleBuffer != NULL) {
+            NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+            UIImage *image = [UIImage imageWithData: imageData];
+            // self.previewView.image
+        }
+    }];
 }
 
 @end

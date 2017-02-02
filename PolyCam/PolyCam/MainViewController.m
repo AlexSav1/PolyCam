@@ -27,11 +27,13 @@
     
     [self addChildViewController:camVC];
     [self.scrollView addSubview: camVC.view];
+    camVC.view.frame = self.view.frame;
     [camVC didMoveToParentViewController:self];
     // camVC.view.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self addChildViewController:statVC];
     [self.scrollView addSubview: statVC.view];
+    statVC.view.frame = self.view.frame;
     [statVC didMoveToParentViewController:self];
     // statVC.view.translatesAutoresizingMaskIntoConstraints = NO;
     

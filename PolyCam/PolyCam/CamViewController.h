@@ -12,6 +12,8 @@
 @interface CamViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
+@property (weak, nonatomic) IBOutlet UIImageView *previewView;
+
 @property (weak, nonatomic) IBOutlet UIImageView *logoWithText;
 @property (weak, nonatomic) IBOutlet UIButton *snapBtn;
 
