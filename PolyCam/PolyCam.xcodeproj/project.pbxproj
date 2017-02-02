@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C5518A11E43DF3F00523D9D /* Key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
 		2C9827E11E43BEBD004BC0B3 /* CamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamViewController.h; sourceTree = "<group>"; };
 		2C9827E21E43BEBD004BC0B3 /* CamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamViewController.m; sourceTree = "<group>"; };
 		2C9827E31E43BEBD004BC0B3 /* CamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamViewController.xib; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		AA438D831E43AEDC00953353 /* BackEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackEnd.m; sourceTree = "<group>"; };
 		AA438D851E43BA2200953353 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		AA438D861E43BA2200953353 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
-		AA438D881E43CA1E00953353 /* Key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +151,7 @@
 				TargetAttributes = {
 					6012CB4D1E43AB6C009E422D = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = F4AC4F5SU6;
+						DevelopmentTeam = 97UAVLVZY6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -321,7 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F4AC4F5SU6;
+				DEVELOPMENT_TEAM = 97UAVLVZY6;
 				INFOPLIST_FILE = PolyCam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -334,7 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F4AC4F5SU6;
+				DEVELOPMENT_TEAM = 97UAVLVZY6;
 				INFOPLIST_FILE = PolyCam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

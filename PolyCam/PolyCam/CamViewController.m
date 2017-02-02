@@ -37,7 +37,7 @@
     
     AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:backCamera error:nil];
     
-    if (error == nil && [self.captureSession canAddInput:deviceInput]) {
+    if ([self.captureSession canAddInput:deviceInput]) {
         [self.captureSession addInput:deviceInput];
         
          self.imageOutput = [[AVCaptureStillImageOutput alloc]init];
@@ -46,6 +46,8 @@
         if ([self.captureSession canAddOutput:self.imageOutput]) {
             [self.captureSession addOutput:self.imageOutput];
             
+            self.previewLayer.backgroundColor = [[UIColor yellowColor] CGColor];
+            self.cameraView.layer.backgroundColor = [[UIColor blueColor] CGColor];
             self.previewLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:self.captureSession];
             [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspect];
             [self.previewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
