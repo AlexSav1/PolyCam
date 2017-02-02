@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C9827E41E43BEBD004BC0B3 /* CamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9827E21E43BEBD004BC0B3 /* CamViewController.m */; };
+		2C9827E51E43BEBD004BC0B3 /* CamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9827E31E43BEBD004BC0B3 /* CamViewController.xib */; };
+		2C9827E91E43C212004BC0B3 /* StatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9827E71E43C212004BC0B3 /* StatViewController.m */; };
+		2C9827EA1E43C212004BC0B3 /* StatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9827E81E43C212004BC0B3 /* StatViewController.xib */; };
 		6012CB531E43AB6C009E422D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012CB521E43AB6C009E422D /* main.m */; };
 		6012CB561E43AB6C009E422D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012CB551E43AB6C009E422D /* AppDelegate.m */; };
 		6012CB591E43AB6C009E422D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012CB581E43AB6C009E422D /* MainViewController.m */; };
@@ -16,6 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C9827E11E43BEBD004BC0B3 /* CamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamViewController.h; sourceTree = "<group>"; };
+		2C9827E21E43BEBD004BC0B3 /* CamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamViewController.m; sourceTree = "<group>"; };
+		2C9827E31E43BEBD004BC0B3 /* CamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamViewController.xib; sourceTree = "<group>"; };
+		2C9827E61E43C212004BC0B3 /* StatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatViewController.h; sourceTree = "<group>"; };
+		2C9827E71E43C212004BC0B3 /* StatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatViewController.m; sourceTree = "<group>"; };
+		2C9827E81E43C212004BC0B3 /* StatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatViewController.xib; sourceTree = "<group>"; };
 		6012CB4E1E43AB6C009E422D /* PolyCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolyCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6012CB521E43AB6C009E422D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6012CB541E43AB6C009E422D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +49,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C9827E01E43BE96004BC0B3 /* CustomVC */ = {
+			isa = PBXGroup;
+			children = (
+				2C9827E11E43BEBD004BC0B3 /* CamViewController.h */,
+				2C9827E21E43BEBD004BC0B3 /* CamViewController.m */,
+				2C9827E31E43BEBD004BC0B3 /* CamViewController.xib */,
+				2C9827E61E43C212004BC0B3 /* StatViewController.h */,
+				2C9827E71E43C212004BC0B3 /* StatViewController.m */,
+				2C9827E81E43C212004BC0B3 /* StatViewController.xib */,
+			);
+			name = CustomVC;
+			sourceTree = "<group>";
+		};
 		6012CB451E43AB6C009E422D = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +86,7 @@
 				6012CB571E43AB6C009E422D /* MainViewController.h */,
 				6012CB581E43AB6C009E422D /* MainViewController.m */,
 				6012CB5A1E43AB6C009E422D /* Main.storyboard */,
+				2C9827E01E43BE96004BC0B3 /* CustomVC */,
 				6012CB5D1E43AB6C009E422D /* Assets.xcassets */,
 				6012CB5F1E43AB6C009E422D /* LaunchScreen.storyboard */,
 				6012CB621E43AB6C009E422D /* Info.plist */,
@@ -140,6 +164,8 @@
 			files = (
 				6012CB611E43AB6C009E422D /* LaunchScreen.storyboard in Resources */,
 				6012CB5E1E43AB6C009E422D /* Assets.xcassets in Resources */,
+				2C9827EA1E43C212004BC0B3 /* StatViewController.xib in Resources */,
+				2C9827E51E43BEBD004BC0B3 /* CamViewController.xib in Resources */,
 				6012CB5C1E43AB6C009E422D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +179,8 @@
 			files = (
 				6012CB591E43AB6C009E422D /* MainViewController.m in Sources */,
 				6012CB561E43AB6C009E422D /* AppDelegate.m in Sources */,
+				2C9827E91E43C212004BC0B3 /* StatViewController.m in Sources */,
+				2C9827E41E43BEBD004BC0B3 /* CamViewController.m in Sources */,
 				6012CB531E43AB6C009E422D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +342,7 @@
 				6012CB671E43AB6C009E422D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

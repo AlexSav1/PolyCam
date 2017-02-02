@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,11 +39,21 @@
                                     <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5XZ-0k-0fc"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Um-tG-NmT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2Um-tG-NmT" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="4Gf-Md-qYV"/>
+                            <constraint firstItem="2Um-tG-NmT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IOB-zg-Bvl"/>
+                            <constraint firstItem="2Um-tG-NmT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yif-lM-k88"/>
+                            <constraint firstItem="2Um-tG-NmT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sZm-cd-oG5"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="5Ry-JP-cI4" id="TcF-pH-8V0"/>
+                        <outlet property="scrollView" destination="2Um-tG-NmT" id="Pvf-ia-GE6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
