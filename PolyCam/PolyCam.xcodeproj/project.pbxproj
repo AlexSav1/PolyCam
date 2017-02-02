@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6012CB531E43AB6C009E422D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012CB521E43AB6C009E422D /* main.m */; };
+		6012CB561E43AB6C009E422D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012CB551E43AB6C009E422D /* AppDelegate.m */; };
+		6012CB591E43AB6C009E422D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012CB581E43AB6C009E422D /* MainViewController.m */; };
+		6012CB5C1E43AB6C009E422D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6012CB5A1E43AB6C009E422D /* Main.storyboard */; };
+		6012CB5E1E43AB6C009E422D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6012CB5D1E43AB6C009E422D /* Assets.xcassets */; };
+		6012CB611E43AB6C009E422D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6012CB5F1E43AB6C009E422D /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6012CB4E1E43AB6C009E422D /* PolyCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolyCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6012CB521E43AB6C009E422D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6012CB541E43AB6C009E422D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6012CB551E43AB6C009E422D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6012CB571E43AB6C009E422D /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		6012CB581E43AB6C009E422D /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		6012CB5B1E43AB6C009E422D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6012CB5D1E43AB6C009E422D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6012CB601E43AB6C009E422D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6012CB621E43AB6C009E422D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6012CB4B1E43AB6C009E422D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6012CB451E43AB6C009E422D = {
+			isa = PBXGroup;
+			children = (
+				6012CB501E43AB6C009E422D /* PolyCam */,
+				6012CB4F1E43AB6C009E422D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6012CB4F1E43AB6C009E422D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6012CB4E1E43AB6C009E422D /* PolyCam.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6012CB501E43AB6C009E422D /* PolyCam */ = {
+			isa = PBXGroup;
+			children = (
+				6012CB541E43AB6C009E422D /* AppDelegate.h */,
+				6012CB551E43AB6C009E422D /* AppDelegate.m */,
+				6012CB571E43AB6C009E422D /* MainViewController.h */,
+				6012CB581E43AB6C009E422D /* MainViewController.m */,
+				6012CB5A1E43AB6C009E422D /* Main.storyboard */,
+				6012CB5D1E43AB6C009E422D /* Assets.xcassets */,
+				6012CB5F1E43AB6C009E422D /* LaunchScreen.storyboard */,
+				6012CB621E43AB6C009E422D /* Info.plist */,
+				6012CB511E43AB6C009E422D /* Supporting Files */,
+			);
+			path = PolyCam;
+			sourceTree = "<group>";
+		};
+		6012CB511E43AB6C009E422D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6012CB521E43AB6C009E422D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6012CB4D1E43AB6C009E422D /* PolyCam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6012CB651E43AB6C009E422D /* Build configuration list for PBXNativeTarget "PolyCam" */;
+			buildPhases = (
+				6012CB4A1E43AB6C009E422D /* Sources */,
+				6012CB4B1E43AB6C009E422D /* Frameworks */,
+				6012CB4C1E43AB6C009E422D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PolyCam;
+			productName = PolyCam;
+			productReference = 6012CB4E1E43AB6C009E422D /* PolyCam.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6012CB461E43AB6C009E422D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = bl;
+				TargetAttributes = {
+					6012CB4D1E43AB6C009E422D = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6012CB491E43AB6C009E422D /* Build configuration list for PBXProject "PolyCam" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6012CB451E43AB6C009E422D;
+			productRefGroup = 6012CB4F1E43AB6C009E422D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6012CB4D1E43AB6C009E422D /* PolyCam */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6012CB4C1E43AB6C009E422D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6012CB611E43AB6C009E422D /* LaunchScreen.storyboard in Resources */,
+				6012CB5E1E43AB6C009E422D /* Assets.xcassets in Resources */,
+				6012CB5C1E43AB6C009E422D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6012CB4A1E43AB6C009E422D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6012CB591E43AB6C009E422D /* MainViewController.m in Sources */,
+				6012CB561E43AB6C009E422D /* AppDelegate.m in Sources */,
+				6012CB531E43AB6C009E422D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6012CB5A1E43AB6C009E422D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6012CB5B1E43AB6C009E422D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6012CB5F1E43AB6C009E422D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6012CB601E43AB6C009E422D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6012CB631E43AB6C009E422D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6012CB641E43AB6C009E422D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6012CB661E43AB6C009E422D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PolyCam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bl.PolyCam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6012CB671E43AB6C009E422D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PolyCam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bl.PolyCam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6012CB491E43AB6C009E422D /* Build configuration list for PBXProject "PolyCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6012CB631E43AB6C009E422D /* Debug */,
+				6012CB641E43AB6C009E422D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6012CB651E43AB6C009E422D /* Build configuration list for PBXNativeTarget "PolyCam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6012CB661E43AB6C009E422D /* Debug */,
+				6012CB671E43AB6C009E422D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6012CB461E43AB6C009E422D /* Project object */;
+}
