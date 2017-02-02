@@ -17,9 +17,9 @@
 
 @implementation MainViewController
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewWillAppear:animated];
     
     // Create the two VCs- camVC & statVC
     CamViewController *camVC = [[CamViewController alloc]init];
@@ -30,12 +30,14 @@
     camVC.view.frame = self.view.frame;
     [camVC didMoveToParentViewController:self];
     // camVC.view.translatesAutoresizingMaskIntoConstraints = NO;
+    camVC.view.frame = self.view.frame;
     
     [self addChildViewController:statVC];
     [self.scrollView addSubview: statVC.view];
     statVC.view.frame = self.view.frame;
     [statVC didMoveToParentViewController:self];
     // statVC.view.translatesAutoresizingMaskIntoConstraints = NO;
+    statVC.view.frame = self.view.frame;
     
     // Shift Stat VC
     CGRect statFrame = statVC.view.frame;

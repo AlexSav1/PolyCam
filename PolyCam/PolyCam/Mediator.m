@@ -63,7 +63,14 @@ static BackEnd *_backEnd;
 //////////////////////////////////////////////////////////////////////////////////////////
 - (void) didSendToEmotionAPI:(Question *)question
 {
-    // question.photo = _photo;
+    question.photo = _photo;
+    
+    double total = (question.anger + question.contempt + question.fear + question.surprise);
+    
+    question.angerPercentage = (question.anger / total);
+    question.contemptPercentage = (question.contempt / total);
+    question.fearPercentage = (question.fear / total);
+    question.surprisePercentage = (question.surprise / total);
     
     [self.delegate didProcessPhoto:question];
 }
