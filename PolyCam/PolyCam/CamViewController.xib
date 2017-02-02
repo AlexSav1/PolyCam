@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CamViewController">
             <connections>
                 <outlet property="cameraView" destination="V7v-2V-XsD" id="0W6-T5-JDg"/>
+                <outlet property="logoWithText" destination="pPF-K9-a2Q" id="IQ2-51-8h7"/>
+                <outlet property="snapBtn" destination="T1h-1N-GLa" id="f30-ST-HuT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,14 +26,38 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" red="0.76058728450000002" green="0.16208900570000001" blue="0.17867107779999999" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWithText" translatesAutoresizingMaskIntoConstraints="NO" id="pPF-K9-a2Q">
+                    <rect key="frame" x="157" y="20" width="60" height="42"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="Anx-fa-13F"/>
+                        <constraint firstAttribute="height" constant="42" id="LCk-S3-Wqf"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1h-1N-GLa">
+                    <rect key="frame" x="147" y="537" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="COb-lB-tCR"/>
+                        <constraint firstAttribute="width" constant="80" id="TcO-lo-5Yf"/>
+                    </constraints>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Button"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="T1h-1N-GLa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MN3-M5-Hfg"/>
                 <constraint firstItem="V7v-2V-XsD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NA3-kl-GZU"/>
+                <constraint firstItem="pPF-K9-a2Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="Wg8-3s-O0v"/>
                 <constraint firstItem="V7v-2V-XsD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ahN-S3-MX3"/>
+                <constraint firstItem="pPF-K9-a2Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qEe-Fj-bUB"/>
                 <constraint firstItem="V7v-2V-XsD" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="tCe-jf-En8"/>
+                <constraint firstAttribute="bottom" secondItem="T1h-1N-GLa" secondAttribute="bottom" constant="50" id="uei-GB-IJK"/>
                 <constraint firstItem="V7v-2V-XsD" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="vWd-3X-rMz"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="logoWithText" width="900" height="639"/>
+    </resources>
 </document>
