@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 
 @interface Question : NSObject
 
-@property NSData *imageData;
+@property UIImage *photo;
 
 @property double anger;
 @property double contempt;
