@@ -17,6 +17,8 @@
 		6012CB5C1E43AB6C009E422D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6012CB5A1E43AB6C009E422D /* Main.storyboard */; };
 		6012CB5E1E43AB6C009E422D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6012CB5D1E43AB6C009E422D /* Assets.xcassets */; };
 		6012CB611E43AB6C009E422D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6012CB5F1E43AB6C009E422D /* LaunchScreen.storyboard */; };
+		AA438D841E43AEDC00953353 /* BackEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = AA438D831E43AEDC00953353 /* BackEnd.m */; };
+		AA438D871E43BA2200953353 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = AA438D861E43BA2200953353 /* Question.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,11 @@
 		6012CB5D1E43AB6C009E422D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6012CB601E43AB6C009E422D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6012CB621E43AB6C009E422D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA438D821E43AEDC00953353 /* BackEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackEnd.h; sourceTree = "<group>"; };
+		AA438D831E43AEDC00953353 /* BackEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackEnd.m; sourceTree = "<group>"; };
+		AA438D851E43BA2200953353 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		AA438D861E43BA2200953353 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		AA438D881E43CA1E00953353 /* Key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +90,11 @@
 			children = (
 				6012CB541E43AB6C009E422D /* AppDelegate.h */,
 				6012CB551E43AB6C009E422D /* AppDelegate.m */,
+				AA438D821E43AEDC00953353 /* BackEnd.h */,
+				AA438D831E43AEDC00953353 /* BackEnd.m */,
+				AA438D881E43CA1E00953353 /* Key.h */,
+				AA438D851E43BA2200953353 /* Question.h */,
+				AA438D861E43BA2200953353 /* Question.m */,
 				6012CB571E43AB6C009E422D /* MainViewController.h */,
 				6012CB581E43AB6C009E422D /* MainViewController.m */,
 				6012CB5A1E43AB6C009E422D /* Main.storyboard */,
@@ -177,7 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA438D841E43AEDC00953353 /* BackEnd.m in Sources */,
 				6012CB591E43AB6C009E422D /* MainViewController.m in Sources */,
+				AA438D871E43BA2200953353 /* Question.m in Sources */,
 				6012CB561E43AB6C009E422D /* AppDelegate.m in Sources */,
 				2C9827E91E43C212004BC0B3 /* StatViewController.m in Sources */,
 				2C9827E41E43BEBD004BC0B3 /* CamViewController.m in Sources */,
