@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong) id<MediatorDelegate> delegate;
 
+@property (nonatomic) NSInteger questionCount;
+@property (nonatomic) double truthfulness;
 @property (nonatomic) double averageOverallAnger;
 @property (nonatomic) double averageOverallContempt;
 @property (nonatomic) double averageOverallFear;

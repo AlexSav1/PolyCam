@@ -23,7 +23,7 @@ static NSMutableArray *_questions;
     double _totalFear;
     double _totalContempt;
     double _totalSurprise;
-    int _questionCount;
+    NSInteger _count;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -77,14 +77,18 @@ static NSMutableArray *_questions;
     _totalContempt += question.contempt;
     _totalFear += question.fear;
     _totalSurprise += question.surprise;
-    ++_questionCount;
+    ++_count;
     
     // Calculate overall average
-    self.averageOverallAnger = _totalAnger / (double)_questionCount;
-    self.averageOverallContempt = _totalContempt / (double)_questionCount;
-    self.averageOverallFear = _totalFear / (double)_questionCount;
-    self.averageOverallSurprise = _totalSurprise / (double)_questionCount;
+    self.averageOverallAnger = _totalAnger / (double)_count;
+    self.averageOverallContempt = _totalContempt / (double)_count;
+    self.averageOverallFear = _totalFear / (double)_count;
+    self.averageOverallSurprise = _totalSurprise / (double)_count;
     
+    self.questionCount = _count;
+
+    self.truthfulness = (question.anger + question.fear) * 10.0;
+
     double total = (question.anger + question.contempt + question.fear + question.surprise);
     
     question.angerPercentage = (question.anger / total);
