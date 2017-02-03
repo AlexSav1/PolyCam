@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C238D5D1E44691400212257 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C238D5B1E44691400212257 /* CustomTableViewCell.m */; };
+		2C238D5E1E44691400212257 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C238D5C1E44691400212257 /* CustomTableViewCell.xib */; };
 		2C9827E41E43BEBD004BC0B3 /* CamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9827E21E43BEBD004BC0B3 /* CamViewController.m */; };
 		2C9827E51E43BEBD004BC0B3 /* CamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9827E31E43BEBD004BC0B3 /* CamViewController.xib */; };
 		2C9827E91E43C212004BC0B3 /* StatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9827E71E43C212004BC0B3 /* StatViewController.m */; };
@@ -23,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C238D5A1E44691400212257 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		2C238D5B1E44691400212257 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		2C238D5C1E44691400212257 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		2C9827E11E43BEBD004BC0B3 /* CamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CamViewController.h; sourceTree = "<group>"; };
 		2C9827E21E43BEBD004BC0B3 /* CamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CamViewController.m; sourceTree = "<group>"; };
 		2C9827E31E43BEBD004BC0B3 /* CamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CamViewController.xib; sourceTree = "<group>"; };
@@ -58,6 +63,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C238D591E4468D000212257 /* CustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C238D5A1E44691400212257 /* CustomTableViewCell.h */,
+				2C238D5B1E44691400212257 /* CustomTableViewCell.m */,
+				2C238D5C1E44691400212257 /* CustomTableViewCell.xib */,
+			);
+			name = CustomTableViewCell;
+			sourceTree = "<group>";
+		};
 		2C9827E01E43BE96004BC0B3 /* CustomVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +117,7 @@
 				6012CB581E43AB6C009E422D /* MainViewController.m */,
 				6012CB5A1E43AB6C009E422D /* Main.storyboard */,
 				2C9827E01E43BE96004BC0B3 /* CustomVC */,
+				2C238D591E4468D000212257 /* CustomTableViewCell */,
 				6012CB5D1E43AB6C009E422D /* Assets.xcassets */,
 				6012CB5F1E43AB6C009E422D /* LaunchScreen.storyboard */,
 				6012CB621E43AB6C009E422D /* Info.plist */,
@@ -179,6 +195,7 @@
 			files = (
 				6012CB611E43AB6C009E422D /* LaunchScreen.storyboard in Resources */,
 				6012CB5E1E43AB6C009E422D /* Assets.xcassets in Resources */,
+				2C238D5E1E44691400212257 /* CustomTableViewCell.xib in Resources */,
 				2C9827EA1E43C212004BC0B3 /* StatViewController.xib in Resources */,
 				2C9827E51E43BEBD004BC0B3 /* CamViewController.xib in Resources */,
 				6012CB5C1E43AB6C009E422D /* Main.storyboard in Resources */,
@@ -197,6 +214,7 @@
 				6012CB731E43D967009E422D /* Mediator.m in Sources */,
 				AA438D871E43BA2200953353 /* Question.m in Sources */,
 				6012CB561E43AB6C009E422D /* AppDelegate.m in Sources */,
+				2C238D5D1E44691400212257 /* CustomTableViewCell.m in Sources */,
 				2C9827E91E43C212004BC0B3 /* StatViewController.m in Sources */,
 				2C9827E41E43BEBD004BC0B3 /* CamViewController.m in Sources */,
 				6012CB531E43AB6C009E422D /* main.m in Sources */,
