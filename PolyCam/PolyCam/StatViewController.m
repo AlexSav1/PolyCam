@@ -26,7 +26,16 @@ alpha:1.0]
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _mediator = [Mediator sharedInstance];
+    
+    self.questionsTableView.dataSource = _mediator;
+    self.questionsTableView.delegate = _mediator;
+    
+    // Define an empty UITableView's tableFooterView to hide UITableView Empty Cell
+    // Separator Lines
+    self.questionsTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
     
     // Adjust UI assets
     self.statsIconImageView.image = [self.statsIconImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -48,6 +57,13 @@ alpha:1.0]
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+//    self.isScrolling = NO;
+    
+    [self.questionsTableView reloadData];
 }
 
 /*

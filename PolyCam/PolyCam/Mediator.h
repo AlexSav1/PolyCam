@@ -18,7 +18,7 @@
 
 @end
 
-@interface Mediator : NSObject<BackEndDelegate>
+@interface Mediator : NSObject<BackEndDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) id<MediatorDelegate> delegate;
 

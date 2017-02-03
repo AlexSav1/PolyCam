@@ -23,6 +23,8 @@
 @property double sadness;
 @property double surprise;
 
+@property double truthfulness;
+
 @property double angerPercentage;
 @property double contemptPercentage;
 @property double fearPercentage;

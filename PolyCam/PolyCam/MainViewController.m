@@ -37,6 +37,8 @@
     CamViewController *camVC = [[CamViewController alloc]init];
     StatViewController *statVC = [[StatViewController alloc]init];
     
+    scrollView.delegate = statVC;
+    
     [self addChildViewController:camVC];
     [scrollView addSubview: camVC.view];
     camVC.view.frame = self.view.frame;
