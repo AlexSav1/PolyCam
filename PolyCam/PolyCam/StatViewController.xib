@@ -12,6 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatViewController">
             <connections>
+                <outlet property="overallAngerBarConstraint" destination="kZZ-UK-bq9" id="2nT-Ss-U5h"/>
+                <outlet property="overallAngerPercentage" destination="pX6-mV-A4D" id="xRr-TU-8zv"/>
+                <outlet property="overallContemptPercentage" destination="PDb-DX-jB0" id="kRC-HR-MHk"/>
+                <outlet property="overallFearPercentage" destination="cn4-Ga-vTT" id="P3f-6Z-tas"/>
+                <outlet property="overallSurprisePercentage" destination="6Ae-fh-afJ" id="KsQ-MX-58P"/>
+                <outlet property="overallTruthPercentage" destination="4eD-HD-tDO" id="uUx-Jt-Rhu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
