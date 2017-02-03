@@ -22,6 +22,11 @@
 
 @property (nonatomic, strong) id<MediatorDelegate> delegate;
 
+@property (nonatomic) double averageOverallAnger;
+@property (nonatomic) double averageOverallContempt;
+@property (nonatomic) double averageOverallFear;
+@property (nonatomic) double averageOverallSurprise;
+
 + (Mediator *)sharedInstance;
 
 - (void) processPhoto:(UIImage *)photo;

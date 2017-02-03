@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "Mediator.h"
 
-@interface CamViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CamViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, MediatorDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIView *tickerView;
