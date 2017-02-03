@@ -9,6 +9,13 @@
 #import "StatViewController.h"
 #import "Mediator.h"
 
+// Define RGB colors
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
+blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
+alpha:1.0]
+
 @interface StatViewController ()
 
 @end
@@ -19,9 +26,11 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     _mediator = [Mediator sharedInstance];
     
+    // Adjust UI assets
+    self.statsIconImageView.image = [self.statsIconImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.statsIconImageView.tintColor = UIColorFromRGB(0x232323);
     
 }
 

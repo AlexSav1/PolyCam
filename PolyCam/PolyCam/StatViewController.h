@@ -10,14 +10,14 @@
 
 @interface StatViewController : UIViewController
 
+// UI
+@property (weak, nonatomic) IBOutlet UIImageView *statsIconImageView;
+
+// Calculated Stats
 @property (weak, nonatomic) IBOutlet UILabel *overallAngerPercentage;
-
 @property (weak, nonatomic) IBOutlet UILabel *overallContemptPercentage;
-
 @property (weak, nonatomic) IBOutlet UILabel *overallFearPercentage;
-
 @property (weak, nonatomic) IBOutlet UILabel *overallSurprisePercentage;
-
 
 @property (weak, nonatomic) IBOutlet UILabel *overallTruthPercentage;
 
