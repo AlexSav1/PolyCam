@@ -17,6 +17,12 @@
 
 @implementation MainViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    NSLog(@"%f",[[self view] bounds].size.width);
+
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -42,6 +48,7 @@
     // Shift Stat VC
     CGRect statFrame = statVC.view.frame;
     statFrame.origin.x = self.view.frame.size.width;
+    NSLog(@"%f",[[self view] bounds].size.width);
     statVC.view.frame = statFrame;
 
     self.scrollView.contentSize = CGSizeMake((self.view.frame.size.width * 2), self.view.frame.size.height);

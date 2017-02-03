@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +20,32 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEl-Xm-Qg7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWithText" translatesAutoresizingMaskIntoConstraints="NO" id="pmt-mQ-W3S">
+                                        <rect key="frame" x="137" y="248" width="100" height="71"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Ymv-Rl-Fj1"/>
+                                            <constraint firstAttribute="height" constant="71" id="kNM-o0-JM7"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pmt-mQ-W3S" firstAttribute="centerX" secondItem="NEl-Xm-Qg7" secondAttribute="centerX" id="D4Y-xD-XZG"/>
+                                    <constraint firstItem="pmt-mQ-W3S" firstAttribute="centerY" secondItem="NEl-Xm-Qg7" secondAttribute="centerY" constant="-40" id="tXr-3v-tSJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NEl-Xm-Qg7" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="D2X-rN-FIr"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="NEl-Xm-Qg7" secondAttribute="bottom" id="TSB-ln-vvw"/>
+                            <constraint firstAttribute="trailing" secondItem="NEl-Xm-Qg7" secondAttribute="trailing" id="rBS-5g-anj"/>
+                            <constraint firstItem="NEl-Xm-Qg7" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="y7A-iz-Plr"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +53,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logoWithText" width="900" height="639"/>
+    </resources>
 </document>
