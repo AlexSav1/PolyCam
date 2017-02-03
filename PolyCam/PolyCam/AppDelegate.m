@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,22 +15,8 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    self.window = [[UIWindow alloc] initWithFrame: screenBounds];
-    self.window.backgroundColor = UIColor.purpleColor;
-    
-    UIViewController *rootController = [[MainViewController alloc] init];
-    rootController.edgesForExtendedLayout = UIRectEdgeAll;
-    
-    [self.window setRootViewController:rootController];
-    
-    // Make the window visible and active
-    [self.window makeKeyAndVisible];
-
     return YES;
 }
 
