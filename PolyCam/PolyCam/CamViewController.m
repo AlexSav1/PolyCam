@@ -8,6 +8,7 @@
 
 #import "CamViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "Mediator.h"
 
 // Define RGB colors
 #define UIColorFromRGB(rgbValue) \
@@ -134,7 +135,12 @@ alpha:1.0]
 {
     // show % and lying status
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////
 //
+//  Action
+//
+//////////////////////////////////////////////////////////////////////////////////////////
 - (IBAction)testBtnPrsd:(id)sender {
     
     // Input
@@ -150,8 +156,6 @@ alpha:1.0]
     [self.feedbackLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
     [self.feedbackLabel2.layer addAnimation:animation forKey:@"changeTextTransition"];
     [self.tipLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
-
-    
     
     // Change the text
     self.questionLabel.text = [NSString stringWithFormat:@"Question #%d", questionCount];
