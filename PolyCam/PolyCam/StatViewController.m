@@ -60,14 +60,19 @@ alpha:1.0]
 {
 //    self.isScrolling = NO;
     
-    self.overallAngerPercentage.text = [NSString stringWithFormat:@"%2.2f%%", _mediator.averageOverallAnger*100];
-    self.overallContemptPercentage.text = [NSString stringWithFormat:@"%2.2f%%", _mediator.averageOverallContempt*100];
-    self.overallFearPercentage.text = [NSString stringWithFormat:@"%2.2f%%", _mediator.averageOverallFear*100];
-    self.overallSurprisePercentage.text = [NSString stringWithFormat:@"%2.2f%%", _mediator.averageOverallSurprise*100];
+    self.overallAngerPercentage.text = [NSString stringWithFormat:@"%.01f%%", _mediator.averageOverallAnger];
+    self.overallContemptPercentage.text = [NSString stringWithFormat:@"%.01f%%", _mediator.averageOverallContempt];
+    self.overallFearPercentage.text = [NSString stringWithFormat:@"%.01f%%", _mediator.averageOverallFear];
+    self.overallSurprisePercentage.text = [NSString stringWithFormat:@"%.01f%%", _mediator.averageOverallSurprise];
     
     self.overallTruthPercentage.text = [NSString stringWithFormat:@"%.0f", _mediator.truthfulness];
     
-    //NSLog(@"ANG: %f", _mediator.averageOverallAnger*100);
+    NSLog(@"ORIG ANG: %f", _mediator.averageOverallAnger);
+    NSLog(@"ORIG Con: %f", _mediator.averageOverallContempt);
+    NSLog(@"ORIG Fear: %f", _mediator.averageOverallFear);
+    NSLog(@"ORIG Sur: %f", _mediator.averageOverallSurprise);
+    
+    
     NSLog(@"ANG: %2.2f%%", _mediator.averageOverallAnger*100);
     NSLog(@"Con: %2.2f%%", _mediator.averageOverallContempt*100);
     NSLog(@"FEAR: %2.2f%%", _mediator.averageOverallFear*100);
@@ -77,9 +82,26 @@ alpha:1.0]
     
     
     self.overallAngerBarConstraint.constant =  _mediator.averageOverallAnger*100;
+    
+    if(self.overallAngerBarConstraint.constant > 80){
+        self.overallAngerBarConstraint.constant = 80;
+    }
     self.overallContemptBarConstraint.constant = _mediator.averageOverallContempt*100;
+    
+    if(self.overallContemptBarConstraint.constant > 80){
+        self.overallContemptBarConstraint.constant = 80;
+    }
+    
     self.overallFearBarConstraint.constant = _mediator.averageOverallFear*100;
+    
+    if(self.overallFearBarConstraint.constant > 80){
+        self.overallFearBarConstraint.constant = 80;
+    }
     self.overallSurpriseBarConstraint.constant = _mediator.averageOverallSurprise*100;
+    
+    if(self.overallSurpriseBarConstraint.constant > 80){
+        self.overallSurpriseBarConstraint.constant = 80;
+    }
     
     
     [self.questionsTableView reloadData];
