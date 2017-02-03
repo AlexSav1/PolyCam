@@ -93,13 +93,13 @@ static NSMutableArray *_questions;
     double total = (question.anger + question.contempt + question.fear + question.surprise);
     
     // Calculate percentage of the 4 Emotions
-    question.angerPercentage = (question.anger / total);
-    question.contemptPercentage = (question.contempt / total);
-    question.fearPercentage = (question.fear / total);
-    question.surprisePercentage = (question.surprise / total);
+    question.angerPercentage = (question.anger / total * 100);
+    question.contemptPercentage = (question.contempt / total * 100);
+    question.fearPercentage = (question.fear / total * 100);
+    question.surprisePercentage = (question.surprise / total * 100);
     
     // Calculate Truthfulness
-    question.truthfulness = (question.anger + question.fear) * 10.0;
+    question.truthfulness = (question.angerPercentage + question.fearPercentage) * 10.0;
     
     [_questions addObject:question];
     
