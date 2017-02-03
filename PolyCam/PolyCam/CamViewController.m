@@ -138,6 +138,28 @@ alpha:1.0]
 - (void)didProcessPhoto:(Question *)question
 {
     [self hideLoadingOverlay];
+
+    if (nil == question)
+    {
+        // Initialize the controller for displaying the message
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@" "
+                                                                       message:@"Oops! That was a bad picture, you need a clear view of a face."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        // Create an OK button and associate the nextStep block with it
+        UIAlertAction* okButton = [UIAlertAction actionWithTitle:@"OK"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:nil];
+        
+        // Add the button to the controller
+        [alert addAction:okButton];
+        
+        // Display the alert controller
+        [self presentViewController:alert animated:YES completion:nil];
+
+        return;
+    }
+
     double truthfulness = question.truthfulness;
     int questionCount = question.iD;
     

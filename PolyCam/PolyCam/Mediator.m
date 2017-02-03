@@ -71,6 +71,14 @@ static NSMutableArray *_questions;
 //////////////////////////////////////////////////////////////////////////////////////////
 - (void) didSendToEmotionAPI:(Question *)question
 {
+    // If did not receive a response then ...
+    if (nil == question)
+    {
+        // propagate it.
+        [self.delegate didProcessPhoto:nil];
+        return;
+    }
+
     question.photo = _photo;
     
     // Maintain running total

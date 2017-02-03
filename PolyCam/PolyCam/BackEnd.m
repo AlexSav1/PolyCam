@@ -36,23 +36,32 @@
         //Convert received data to dictionary
         NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
        
-        //Parsing
-        NSDictionary *jsonDictionary = jsonArray[0];
-        NSDictionary *scores = jsonDictionary[@"scores"];
-        
-        currentQuestion.anger = [[scores objectForKey:@"anger"] doubleValue];
-        currentQuestion.contempt = [[scores objectForKey:@"contempt"] doubleValue];
-        currentQuestion.disgust = [[scores objectForKey:@"disgust"] doubleValue];
-        currentQuestion.fear = [[scores objectForKey:@"fear"] doubleValue];
-        
-        currentQuestion.happiness = [[scores objectForKey:@"happiness"] doubleValue];
-        currentQuestion.neutral = [[scores objectForKey:@"neutral"] doubleValue];
-        currentQuestion.sadness = [[scores objectForKey:@"sadness"] doubleValue];
-        currentQuestion.surprise = [[scores objectForKey:@"surprise"] doubleValue];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate didSendToEmotionAPI:currentQuestion];
-        });
+        if (0 == jsonArray.count)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate didSendToEmotionAPI:nil];
+            });
+        }
+        else
+        {
+            //Parsing
+            NSDictionary *jsonDictionary = jsonArray[0];
+            NSDictionary *scores = jsonDictionary[@"scores"];
+            
+            currentQuestion.anger = [[scores objectForKey:@"anger"] doubleValue];
+            currentQuestion.contempt = [[scores objectForKey:@"contempt"] doubleValue];
+            currentQuestion.disgust = [[scores objectForKey:@"disgust"] doubleValue];
+            currentQuestion.fear = [[scores objectForKey:@"fear"] doubleValue];
+            
+            currentQuestion.happiness = [[scores objectForKey:@"happiness"] doubleValue];
+            currentQuestion.neutral = [[scores objectForKey:@"neutral"] doubleValue];
+            currentQuestion.sadness = [[scores objectForKey:@"sadness"] doubleValue];
+            currentQuestion.surprise = [[scores objectForKey:@"surprise"] doubleValue];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate didSendToEmotionAPI:currentQuestion];
+            });
+        }
         
     }
       ]resume];
