@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 
 @property (weak, nonatomic) IBOutlet UIView *horizontalDiv;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *feedbackLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 @property (weak, nonatomic) IBOutlet UIImageView *previewView;
