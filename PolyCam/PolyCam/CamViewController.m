@@ -88,7 +88,11 @@ alpha:1.0]
 - (void)didTakePhoto {
 }
 
-// Actions
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Actions
+//
+//////////////////////////////////////////////////////////////////////////////////////////
 - (IBAction)snapBtnPrsd:(id)sender {
     AVCaptureConnection *videoConnection = nil;
     
@@ -111,6 +115,42 @@ alpha:1.0]
             self.previewView.image = image;
         }
     }];
+
+}
+//
+- (IBAction)testBtnPrsd:(id)sender {
+    
+    // Input
+    double truthfulness = 35.6;
+    int questionCount = 2;
+    
+    // Animation
+    CATransition *animation = [CATransition animation];
+    animation.duration = 1.0;
+    animation.type = kCATransitionFade;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    [self.questionLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
+    [self.feedbackLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
+    [self.feedbackLabel2.layer addAnimation:animation forKey:@"changeTextTransition"];
+    [self.tipLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
+
+    
+    
+    // Change the text
+    self.questionLabel.text = [NSString stringWithFormat:@"Question #%d", questionCount];
+    self.feedbackLabel2.text = @"Likely Truthful";
+    self.tipLabel.text = [NSString stringWithFormat:@"%.0f%%", truthfulness];
+    
+    // Conditional Updates
+    if (truthfulness <= 50) {
+        self.tipLabel.backgroundColor = UIColorFromRGB(0xdd7684);
+        self.tickerView.backgroundColor = UIColorFromRGB(0xac0101);
+        self.feedbackLabel2.text = @"Likely Lying";
+    } else {
+        self.tipLabel.backgroundColor = UIColorFromRGB(0x8de37e);
+        self.feedbackLabel2.textColor = UIColorFromRGB(0x8de37e);
+        self.feedbackLabel2.text = @"Likely Truthful";
+    }
 
 }
 @end

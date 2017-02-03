@@ -12,11 +12,13 @@
 @interface CamViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIView *tickerView;
 
 @property (weak, nonatomic) IBOutlet UIView *horizontalDiv;
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *feedbackLabel;
+@property (weak, nonatomic) IBOutlet UILabel *feedbackLabel2;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 @property (weak, nonatomic) IBOutlet UIImageView *previewView;
@@ -30,6 +32,8 @@
 @property (strong, nonatomic) AVCaptureStillImageOutput *imageOutput;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 
+// Actions
 - (IBAction)snapBtnPrsd:(id)sender;
+- (IBAction)testBtnPrsd:(id)sender;
 
 @end
