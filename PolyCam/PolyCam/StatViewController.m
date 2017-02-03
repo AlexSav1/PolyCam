@@ -65,7 +65,7 @@ alpha:1.0]
     self.overallFearPercentage.text = [NSString stringWithFormat:@"%2.2f%%", _mediator.averageOverallFear*100];
     self.overallSurprisePercentage.text = [NSString stringWithFormat:@"%2.2f%%", _mediator.averageOverallSurprise*100];
     
-    self.overallTruthPercentage.text = [NSString stringWithFormat:@"%f", _mediator.truthfulness];
+    self.overallTruthPercentage.text = [NSString stringWithFormat:@"%.0f", _mediator.truthfulness];
     
     //NSLog(@"ANG: %f", _mediator.averageOverallAnger*100);
     NSLog(@"ANG: %2.2f%%", _mediator.averageOverallAnger*100);

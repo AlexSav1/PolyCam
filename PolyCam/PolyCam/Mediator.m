@@ -24,6 +24,7 @@ static NSMutableArray *_questions;
     double _totalFear;
     double _totalContempt;
     double _totalSurprise;
+    double _totalTruthfulness;
     NSInteger _count;
 }
 
@@ -111,7 +112,9 @@ static NSMutableArray *_questions;
     if (question.truthfulness >= 100) {
         question.truthfulness = 98;
     }
-    
+    _totalTruthfulness += question.truthfulness;
+    self.truthfulness = _totalTruthfulness / _count;
+
     [_questions addObject:question];
     
     [self.delegate didProcessPhoto:question];
@@ -188,7 +191,7 @@ static NSMutableArray *_questions;
     cell.imageView.clipsToBounds = YES;
     cell.imageView.image = question.photo;
     cell.textLabel.text = [NSString stringWithFormat:@"Question %ld", indexPath.row + 1];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Truth Rating: %ld%%", (long) question.truthfulness];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Truth Rating: %.0f%%", question.truthfulness];
 //    cell.imageView.image = ;
 
     return cell;
