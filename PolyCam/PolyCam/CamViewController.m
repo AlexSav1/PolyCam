@@ -9,11 +9,21 @@
 #import "CamViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
+// Define RGB colors
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
+blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
+alpha:1.0]
+
 @interface CamViewController ()
 
 @end
 
 @implementation CamViewController
+{
+    Mediator *_mediator;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -23,11 +33,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // UI Adjustments
+    // Header
+    self.tipLabel.backgroundColor = UIColorFromRGB(0xdd7684);
+    self.tipLabel.layer.masksToBounds = YES;
+    self.tipLabel.layer.cornerRadius = 20.0;
+    
+    // Snap Btn
     UIImage *snapBtnImage = [UIImage imageNamed:@"snapBtn.png"];
     [self.snapBtn setImage:snapBtnImage forState:UIControlStateNormal];
     UIImage *statsBtnImage = [UIImage imageNamed:@"stats.png"];
     [self.statBtn setImage:statsBtnImage forState:UIControlStateNormal];
     
+    _mediator = [Mediator sharedInstance];
+    _mediator.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -71,9 +90,6 @@
     }
 }
 
-- (void)didTakePhoto {
-}
-
 // Actions
 - (IBAction)snapBtnPrsd:(id)sender {
     AVCaptureConnection *videoConnection = nil;
@@ -95,8 +111,22 @@
             NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
             UIImage *image = [UIImage imageWithData: imageData];
             self.previewView.image = image;
+            [_mediator processPhoto:image];
         }
     }];
 
+    
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Delegate method called when the photo has been completely processed.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (void)didProcessPhoto:(Question *)question
+{
+    // show % and lying status
+}
+
+
 @end
