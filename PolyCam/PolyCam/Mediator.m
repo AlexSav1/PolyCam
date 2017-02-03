@@ -100,6 +100,9 @@ static NSMutableArray *_questions;
     
     // Calculate Truthfulness
     question.truthfulness = (question.angerPercentage + question.fearPercentage) * 10.0;
+    if (question.truthfulness >= 100) {
+        question.truthfulness = 98;
+    }
     
     [_questions addObject:question];
     
