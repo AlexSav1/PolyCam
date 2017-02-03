@@ -36,7 +36,6 @@ alpha:1.0]
     
     // UI Adjustments
     // Header
-    self.tipLabel.backgroundColor = UIColorFromRGB(0xdd7684);
     self.tipLabel.layer.masksToBounds = YES;
     self.tipLabel.layer.cornerRadius = 20.0;
     
@@ -143,8 +142,9 @@ alpha:1.0]
 //////////////////////////////////////////////////////////////////////////////////////////
 - (IBAction)testBtnPrsd:(id)sender {
     
-    // Input
-    double truthfulness = 35.6;
+    // Test input
+    // These are the values that should be passed to the instance method that updates the labels
+    double truthfulness = 85.6;
     int questionCount = 2;
     
     // Animation
@@ -158,20 +158,37 @@ alpha:1.0]
     [self.tipLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
     
     // Change the text
-    self.questionLabel.text = [NSString stringWithFormat:@"Question #%d", questionCount];
-    self.feedbackLabel2.text = @"Likely Truthful";
-    self.tipLabel.text = [NSString stringWithFormat:@"%.0f%%", truthfulness];
+    self.questionLabel.text = [NSString stringWithFormat:@"Question #%d\nTruth Rating: %.0f%%", questionCount, truthfulness];
+    self.tipLabel.textColor = [UIColor whiteColor];
+    // self.tipLabel.text = [NSString stringWithFormat:@"%.0f%%", truthfulness];
     
     // Conditional Updates
     if (truthfulness <= 50) {
+        self.tipLabel.text = @"LIE";
         self.tipLabel.backgroundColor = UIColorFromRGB(0xdd7684);
         self.tickerView.backgroundColor = UIColorFromRGB(0xac0101);
-        self.feedbackLabel2.text = @"Likely Lying";
+        self.feedbackLabel.text = @"LIKELY LYING";
+        self.feedbackLabel.textColor = UIColorFromRGB(0xdd7684);
     } else {
-        self.tipLabel.backgroundColor = UIColorFromRGB(0x8de37e);
-        self.feedbackLabel2.textColor = UIColorFromRGB(0x8de37e);
-        self.feedbackLabel2.text = @"Likely Truthful";
+        self.tipLabel.text = @"TRU";
+        self.tipLabel.backgroundColor = UIColorFromRGB(0x76d067);
+        self.tickerView.backgroundColor = UIColorFromRGB(0x2c992c);
+        self.feedbackLabel.text = @"LIKELY TRUTHFUL";
+        self.feedbackLabel.textColor = UIColorFromRGB(0x8de37e);
     }
 
+}
+- (IBAction)testLoadingBtnPrsd:(id)sender {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    [self.loadingView setAlpha:.8];
+    [UIView commitAnimations];
+}
+
+- (IBAction)dismissLoading:(id)sender {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    [self.loadingView setAlpha:0];
+    [UIView commitAnimations];
 }
 @end
