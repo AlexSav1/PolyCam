@@ -15,11 +15,19 @@
 
 @implementation CamViewController
 
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  viewDidLoad, viewWillAppear, viewDidAppear
+//
+//////////////////////////////////////////////////////////////////////////////////////////
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     UIImage *snapBtnImage = [UIImage imageNamed:@"snapBtn.png"];
     [self.snapBtn setImage:snapBtnImage forState:UIControlStateNormal];
+    UIImage *statsBtnImage = [UIImage imageNamed:@"stats.png"];
+    [self.statBtn setImage:statsBtnImage forState:UIControlStateNormal];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -39,7 +47,7 @@
     self.captureSession.sessionPreset = AVCaptureSessionPreset1920x1080;
     
     AVCaptureDevice *backCamera = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    NSError *error = [[NSError alloc]init];
+    // NSError *error = [[NSError alloc]init];
     
     AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:backCamera error:nil];
     
@@ -64,6 +72,10 @@
 }
 
 - (void)didTakePhoto {
+}
+
+// Actions
+- (IBAction)snapBtnPrsd:(id)sender {
     AVCaptureConnection *videoConnection = nil;
     
     for (AVCaptureConnection *connection in self.imageOutput.connections) {
@@ -82,9 +94,9 @@
         if (imageDataSampleBuffer != NULL) {
             NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
             UIImage *image = [UIImage imageWithData: imageData];
-            // self.previewView.image
+            self.previewView.image = image;
         }
     }];
-}
 
+}
 @end
