@@ -14,6 +14,9 @@
 @end
 
 @implementation CamViewController
+{
+    Mediator *_mediator;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -28,6 +31,8 @@
     UIImage *statsBtnImage = [UIImage imageNamed:@"stats.png"];
     [self.statBtn setImage:statsBtnImage forState:UIControlStateNormal];
     
+    _mediator = [Mediator sharedInstance];
+    _mediator.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -71,9 +76,6 @@
     }
 }
 
-- (void)didTakePhoto {
-}
-
 // Actions
 - (IBAction)snapBtnPrsd:(id)sender {
     AVCaptureConnection *videoConnection = nil;
@@ -95,8 +97,22 @@
             NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
             UIImage *image = [UIImage imageWithData: imageData];
             self.previewView.image = image;
+            [_mediator processPhoto:image];
         }
     }];
 
+    
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Delegate method called when the photo has been completely processed.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (void)didProcessPhoto:(Question *)question
+{
+    // show % and lying status
+}
+
+
 @end
