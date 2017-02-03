@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StatViewController : UIViewController
+@interface StatViewController : UIViewController<UIScrollViewDelegate>
 
 // UI
 @property (weak, nonatomic) IBOutlet UIImageView *statsIconImageView;
+@property (weak, nonatomic) IBOutlet UITableView *questionsTableView;
 
 // Calculated Stats
 @property (weak, nonatomic) IBOutlet UILabel *overallAngerPercentage;
