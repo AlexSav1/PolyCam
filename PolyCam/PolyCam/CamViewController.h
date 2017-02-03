@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *snapBtn;
 @property (weak, nonatomic) IBOutlet UIButton *statBtn;
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
+@property (weak, nonatomic) IBOutlet UIButton *okBtn;
 
 // Video Related Assets
 @property (strong, nonatomic) AVCaptureSession *captureSession;
@@ -39,5 +40,7 @@
 - (IBAction)testBtnPrsd:(id)sender;
 - (IBAction)testLoadingBtnPrsd:(id)sender;
 - (IBAction)dismissLoading:(id)sender;
+- (IBAction)okBtnPrsd:(id)sender;
+
 
 @end

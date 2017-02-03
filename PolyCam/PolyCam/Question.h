@@ -13,7 +13,9 @@
 @interface Question : NSObject
 
 @property UIImage *photo;
+@property int iD;
 
+// All 8 Emotions
 @property double anger;
 @property double contempt;
 @property double disgust;
@@ -23,9 +25,13 @@
 @property double sadness;
 @property double surprise;
 
+// Calculated Emotions
 @property double angerPercentage;
 @property double contemptPercentage;
 @property double fearPercentage;
 @property double surprisePercentage;
+
+// Truthfullness
+@property double truthfulness;
 
 @end

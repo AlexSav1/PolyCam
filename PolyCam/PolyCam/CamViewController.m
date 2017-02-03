@@ -39,12 +39,14 @@ alpha:1.0]
     self.tipLabel.layer.masksToBounds = YES;
     self.tipLabel.layer.cornerRadius = 20.0;
     
-    // Snap Btn
+    // Btn
     UIImage *snapBtnImage = [UIImage imageNamed:@"snapBtn.png"];
     [self.snapBtn setImage:snapBtnImage forState:UIControlStateNormal];
+    [self.okBtn setImage:snapBtnImage forState:UIControlStateNormal];
     UIImage *statsBtnImage = [UIImage imageNamed:@"stats.png"];
     [self.statBtn setImage:statsBtnImage forState:UIControlStateNormal];
     
+    // Mediator
     _mediator = [Mediator sharedInstance];
     _mediator.delegate = self;
 }
@@ -90,38 +92,41 @@ alpha:1.0]
     }
 }
 
-- (void)didTakePhoto {
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////
 //
 //  Actions
 //
 //////////////////////////////////////////////////////////////////////////////////////////
 - (IBAction)snapBtnPrsd:(id)sender {
-    AVCaptureConnection *videoConnection = nil;
-    
-    for (AVCaptureConnection *connection in self.imageOutput.connections) {
-        for (AVCaptureInputPort *inputPort in [connection inputPorts]) {
-            if ([[inputPort mediaType] isEqual:AVMediaTypeVideo]) {
-                videoConnection = connection;
+    if (self.previewView.alpha == 0) {
+        AVCaptureConnection *videoConnection = nil;
+        
+        for (AVCaptureConnection *connection in self.imageOutput.connections) {
+            for (AVCaptureInputPort *inputPort in [connection inputPorts]) {
+                if ([[inputPort mediaType] isEqual:AVMediaTypeVideo]) {
+                    videoConnection = connection;
+                    break;
+                }
+            }
+            if (videoConnection) {
                 break;
             }
         }
-        if (videoConnection) {
-            break;
-        }
+        
+        [self.imageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
+            if (imageDataSampleBuffer != NULL) {
+                NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+                UIImage *image = [UIImage imageWithData: imageData];
+                self.previewView.image = image;
+                self.previewView.alpha = 1;
+                [self showLoadingOverlay];
+                [_mediator processPhoto:image];
+            }
+        }];
+   
+    } else {
+        self.previewView.alpha = 0;
     }
-    
-    [self.imageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
-        if (imageDataSampleBuffer != NULL) {
-            NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-            UIImage *image = [UIImage imageWithData: imageData];
-            self.previewView.image = image;
-            [_mediator processPhoto:image];
-        }
-    }];
-
     
 }
 
@@ -132,20 +137,9 @@ alpha:1.0]
 //////////////////////////////////////////////////////////////////////////////////////////
 - (void)didProcessPhoto:(Question *)question
 {
-    // show % and lying status
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////
-//
-//  Action
-//
-//////////////////////////////////////////////////////////////////////////////////////////
-- (IBAction)testBtnPrsd:(id)sender {
-    
-    // Test input
-    // These are the values that should be passed to the instance method that updates the labels
-    double truthfulness = 85.6;
-    int questionCount = 2;
+    [self hideLoadingOverlay];
+    double truthfulness = question.truthfulness;
+    int questionCount = question.iD;
     
     // Animation
     CATransition *animation = [CATransition animation];
@@ -176,19 +170,29 @@ alpha:1.0]
         self.feedbackLabel.text = @"LIKELY TRUTHFUL";
         self.feedbackLabel.textColor = UIColorFromRGB(0x8de37e);
     }
-
 }
-- (IBAction)testLoadingBtnPrsd:(id)sender {
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Loading Overlay
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (void)showLoadingOverlay {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5];
     [self.loadingView setAlpha:.8];
     [UIView commitAnimations];
 }
 
-- (IBAction)dismissLoading:(id)sender {
+- (void)hideLoadingOverlay {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5];
     [self.loadingView setAlpha:0];
     [UIView commitAnimations];
 }
+- (IBAction)okBtnPrsd:(id)sender {
+    self.okBtn.hidden = TRUE;
+    self.previewView.alpha = 0;
+}
+
 @end
