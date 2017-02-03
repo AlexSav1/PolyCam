@@ -109,17 +109,23 @@ static NSMutableArray *_questions;
     question.fearPercentage = (question.fear / total * 100);
     question.surprisePercentage = (question.surprise / total * 100);
     
-    self.averageOverallAnger = question.angerPercentage / _count;
-    self.averageOverallContempt = question.contemptPercentage / _count;
-    self.averageOverallFear = question.fearPercentage / _count;
-    self.averageOverallSurprise = question.surprisePercentage / _count;
+    // Calculate overall percentages (average)
+    double overallTotal = (_totalAnger + _totalContempt + _totalFear + _totalSurprise);
+    
+    self.averageOverallAnger = (_totalAnger / overallTotal) *100;
+    self.averageOverallContempt = (_totalContempt / overallTotal) *100;
+    self.averageOverallFear = (_totalFear / overallTotal) *100;
+    self.averageOverallSurprise = (_totalSurprise / overallTotal) *100;
     
     
     // Calculate Truthfulness
-    question.truthfulness = (question.angerPercentage + question.fearPercentage) * 10.0;
-    if (question.truthfulness >= 100) {
-        question.truthfulness = 98;
+    question.truthfulness = 100 - ((question.angerPercentage + question.fearPercentage) * 10.0);
+    if (question.truthfulness <= 0) {
+        question.truthfulness = 5;
+    } else if (question.truthfulness >= 99) {
+        question.truthfulness = 97;
     }
+    
     _totalTruthfulness += question.truthfulness;
     self.truthfulness = _totalTruthfulness / _count;
 
