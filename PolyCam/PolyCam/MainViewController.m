@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%f",[[self view] bounds].size.width);
+    
+    self.view.backgroundColor = [UIColor blackColor];
 
 }
 
@@ -28,8 +30,10 @@
     [super viewWillAppear:animated];
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    scrollView.bounces = NO;
     scrollView.scrollEnabled = YES;
     scrollView.userInteractionEnabled = YES;
+    
     [self.view addSubview:scrollView];
     scrollView.contentSize = CGSizeMake((self.view.frame.size.width * 2), self.view.frame.size.height);
     

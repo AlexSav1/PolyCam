@@ -9,6 +9,7 @@
 
 #import "Mediator.h"
 #import "StatViewController.h"
+#import "CustomTableViewCell.h"
 
 
 static BackEnd *_backEnd;
@@ -150,6 +151,7 @@ static NSMutableArray *_questions;
 //  Delegate method for loading data into current row of the tableView.
 //
 //////////////////////////////////////////////////////////////////////////////////////////
+
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
