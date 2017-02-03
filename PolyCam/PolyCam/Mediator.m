@@ -169,7 +169,7 @@ static NSMutableArray *_questions;
     
     // Load current cell with the question result
     cell.textLabel.text = [NSString stringWithFormat:@"Question %ld", indexPath.row + 1];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f%%", question.truthfulness * 100.0];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld%%", (long) question.truthfulness];
 //    cell.imageView.image = ;
 
     return cell;

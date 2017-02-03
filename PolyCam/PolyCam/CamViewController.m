@@ -170,9 +170,6 @@ alpha:1.0]
         self.feedbackLabel.text = @"LIKELY TRUTHFUL";
         self.feedbackLabel.textColor = UIColorFromRGB(0x8de37e);
     }
-    
-    // Clear the picture, so the camera is ready for next shot
-    self.previewView.image = nil;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
