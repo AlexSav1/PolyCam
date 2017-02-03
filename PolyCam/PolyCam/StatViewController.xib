@@ -13,8 +13,11 @@
             <connections>
                 <outlet property="overallAngerBarConstraint" destination="pus-ja-ktu" id="6eA-fj-IjT"/>
                 <outlet property="overallAngerPercentage" destination="pX6-mV-A4D" id="xRr-TU-8zv"/>
+                <outlet property="overallContemptBarConstraint" destination="jbW-cm-M92" id="fqE-tJ-Kmd"/>
                 <outlet property="overallContemptPercentage" destination="PIz-Ed-c3k" id="4pn-dV-E94"/>
+                <outlet property="overallFearBarConstraint" destination="fG7-8t-rdD" id="B7G-xk-lVZ"/>
                 <outlet property="overallFearPercentage" destination="8yb-C5-y9T" id="wMj-Nw-TEs"/>
+                <outlet property="overallSurpriseBarConstraint" destination="07H-Iw-La5" id="mJF-ko-n0t"/>
                 <outlet property="overallSurprisePercentage" destination="cQl-sZ-hzV" id="dIj-lx-rvT"/>
                 <outlet property="overallTruthPercentage" destination="4eD-HD-tDO" id="uUx-Jt-Rhu"/>
                 <outlet property="questionsTableView" destination="79M-0a-2uC" id="GzL-En-fdb"/>

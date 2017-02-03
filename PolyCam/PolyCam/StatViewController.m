@@ -60,19 +60,19 @@ alpha:1.0]
 {
 //    self.isScrolling = NO;
     
-    self.overallAngerPercentage.text = [NSString stringWithFormat:@"%f", _mediator.averageOverallAnger*100.0];
-    self.overallContemptPercentage.text = [NSString stringWithFormat:@"%f", _mediator.averageOverallContempt*100.0];
-    self.overallFearPercentage.text = [NSString stringWithFormat:@"%f", _mediator.averageOverallFear*100.0];
-    self.overallSurprisePercentage.text = [NSString stringWithFormat:@"%f", _mediator.averageOverallSurprise*100.0];
+    self.overallAngerPercentage.text = [NSString stringWithFormat:@"%f", _mediator.averageOverallAnger];
+    self.overallContemptPercentage.text = [NSString stringWithFormat:@"%f", _mediator.averageOverallContempt];
+    self.overallFearPercentage.text = [NSString stringWithFormat:@"%f", _mediator.averageOverallFear];
+    self.overallSurprisePercentage.text = [NSString stringWithFormat:@"%f", _mediator.averageOverallSurprise];
     
-    self.overallTruthPercentage.text = [NSString stringWithFormat:@"%f", _mediator.truthfulness*100.0];
+    self.overallTruthPercentage.text = [NSString stringWithFormat:@"%f", _mediator.truthfulness];
     
-    NSLog(@"ANG: %f", _mediator.averageOverallAnger*100.0);
-    NSLog(@"Con: %f", _mediator.averageOverallContempt*100.0);
-    NSLog(@"FEAR: %f", _mediator.averageOverallFear*100.0);
-    NSLog(@"Sur: %f", _mediator.averageOverallSurprise*100.0);
+    NSLog(@"ANG: %f", _mediator.averageOverallAnger);
+    NSLog(@"Con: %f", _mediator.averageOverallContempt);
+    NSLog(@"FEAR: %f", _mediator.averageOverallFear);
+    NSLog(@"Sur: %f", _mediator.averageOverallSurprise);
     
-    NSLog(@"Truth: %f", _mediator.truthfulness*100.0);
+    NSLog(@"Truth: %f", _mediator.truthfulness);
     
     [self.questionsTableView reloadData];
 }
