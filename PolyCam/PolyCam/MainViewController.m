@@ -33,6 +33,7 @@
     scrollView.bounces = NO;
     scrollView.scrollEnabled = YES;
     scrollView.userInteractionEnabled = YES;
+    scrollView.pagingEnabled = YES;
     
     [self.view addSubview:scrollView];
     scrollView.contentSize = CGSizeMake((self.view.frame.size.width * 2), self.view.frame.size.height);
