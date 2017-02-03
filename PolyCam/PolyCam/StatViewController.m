@@ -81,23 +81,23 @@ alpha:1.0]
     NSLog(@"Truth: %f", _mediator.truthfulness);
     
     
-    self.overallAngerBarConstraint.constant =  _mediator.averageOverallAnger*100;
+    self.overallAngerBarConstraint.constant =  _mediator.averageOverallAnger;
     
     if(self.overallAngerBarConstraint.constant > 80){
         self.overallAngerBarConstraint.constant = 80;
     }
-    self.overallContemptBarConstraint.constant = _mediator.averageOverallContempt*100;
+    self.overallContemptBarConstraint.constant = _mediator.averageOverallContempt;
     
     if(self.overallContemptBarConstraint.constant > 80){
         self.overallContemptBarConstraint.constant = 80;
     }
     
-    self.overallFearBarConstraint.constant = _mediator.averageOverallFear*100;
+    self.overallFearBarConstraint.constant = _mediator.averageOverallFear;
     
     if(self.overallFearBarConstraint.constant > 80){
         self.overallFearBarConstraint.constant = 80;
     }
-    self.overallSurpriseBarConstraint.constant = _mediator.averageOverallSurprise*100;
+    self.overallSurpriseBarConstraint.constant = _mediator.averageOverallSurprise;
     
     if(self.overallSurpriseBarConstraint.constant > 80){
         self.overallSurpriseBarConstraint.constant = 80;
