@@ -97,4 +97,99 @@ static NSMutableArray *_questions;
     [self.delegate didProcessPhoto:question];
 }
 
+#pragma mark - Table view data source
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Delegate method that return if the specified row can move or not.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Delegate method to specify the number of section in the tableView.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Delegate method to specify the number of rows in the tableView.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    return _questions.count;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Delegate method to specify if the current row is editable.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Delegate method for loading data into current row of the tableView.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (nil == cell)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:CellIdentifier];
+    
+    // Get the corresponding question result
+    Question *question = _questions[indexPath.row];
+    
+    // Load current cell with the question result
+/*
+    cell.textLabel.text =
+    cell.detailTextLabel.text =
+    cell.imageView.image = ;
+*/
+    
+    return cell;
+}
+
+
+
+#pragma mark - Table view delegate
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Delegate method to return the size of the section header.
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    // Return 0, there is no need to display a section header in this screen.
+    return 0.0;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Delegate method to return the size of each row in points (not pixel).
+//
+//////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.0;
+}
+
 @end
