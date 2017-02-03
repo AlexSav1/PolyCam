@@ -10,4 +10,17 @@
 
 @interface StatViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *overallAngerPercentage;
+
+@property (weak, nonatomic) IBOutlet UILabel *overallContemptPercentage;
+
+@property (weak, nonatomic) IBOutlet UILabel *overallFearPercentage;
+
+@property (weak, nonatomic) IBOutlet UILabel *overallSurprisePercentage;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *overallTruthPercentage;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *overallAngerBarConstraint;
+
 @end
