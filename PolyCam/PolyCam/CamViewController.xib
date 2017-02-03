@@ -78,10 +78,10 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fae-Tc-fjO">
-                    <rect key="frame" x="315" y="31" width="30" height="30"/>
+                    <rect key="frame" x="319" y="33" width="26" height="26"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="Hp0-yc-n6j"/>
-                        <constraint firstAttribute="height" constant="30" id="dAg-wU-fsQ"/>
+                        <constraint firstAttribute="width" constant="26" id="Hp0-yc-n6j"/>
+                        <constraint firstAttribute="height" constant="26" id="dAg-wU-fsQ"/>
                     </constraints>
                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Button"/>
