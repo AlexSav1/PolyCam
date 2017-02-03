@@ -23,5 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *overallTruthPercentage;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *overallAngerBarConstraint;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *overallContemptBarConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *overallFearBarConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *overallSurpriseBarConstraint;
 @end

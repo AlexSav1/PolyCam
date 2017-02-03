@@ -179,8 +179,16 @@ static NSMutableArray *_questions;
     Question *question = _questions[indexPath.row];
     
     // Load current cell with the question result
+    CGFloat borderWidth = 3.0f;
+    
+    cell.imageView.frame = CGRectInset(cell.imageView.frame, -borderWidth, -borderWidth);
+    cell.imageView.layer.borderColor = [UIColor whiteColor].CGColor;
+    cell.imageView.layer.borderWidth = borderWidth;
+    cell.imageView.layer.cornerRadius = 10;
+    cell.imageView.clipsToBounds = YES;
+    cell.imageView.image = question.photo;
     cell.textLabel.text = [NSString stringWithFormat:@"Question %ld", indexPath.row + 1];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld%%", (long) question.truthfulness];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Truth Rating: %ld%%", (long) question.truthfulness];
 //    cell.imageView.image = ;
 
     return cell;
