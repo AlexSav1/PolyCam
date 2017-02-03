@@ -27,36 +27,36 @@
 {
     [super viewWillAppear:animated];
     
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    scrollView.scrollEnabled = YES;
+    scrollView.userInteractionEnabled = YES;
+    [self.view addSubview:scrollView];
+    scrollView.contentSize = CGSizeMake((self.view.frame.size.width * 2), self.view.frame.size.height);
+    
     // Create the two VCs- camVC & statVC
     CamViewController *camVC = [[CamViewController alloc]init];
     StatViewController *statVC = [[StatViewController alloc]init];
     
     [self addChildViewController:camVC];
-    [self.scrollView addSubview: camVC.view];
+    [scrollView addSubview: camVC.view];
     camVC.view.frame = self.view.frame;
     [camVC didMoveToParentViewController:self];
     // camVC.view.translatesAutoresizingMaskIntoConstraints = NO;
-    camVC.view.frame = self.view.frame;
     
     [self addChildViewController:statVC];
-    [self.scrollView addSubview: statVC.view];
+    [scrollView addSubview: statVC.view];
     statVC.view.frame = self.view.frame;
     [statVC didMoveToParentViewController:self];
     // statVC.view.translatesAutoresizingMaskIntoConstraints = NO;
-    statVC.view.frame = self.view.frame;
     
     // Shift Stat VC
     CGRect statFrame = statVC.view.frame;
     statFrame.origin.x = self.view.frame.size.width;
     NSLog(@"%f",[[self view] bounds].size.width);
     statVC.view.frame = statFrame;
-
-    self.scrollView.contentSize = CGSizeMake((self.view.frame.size.width * 2), self.view.frame.size.height);
-    
-
 }
 
-
+#if 0
 //////////////////////////////////////////////////////////////////////////////////////////
 //
 //  Method is called when the user pushes the button
@@ -87,5 +87,6 @@
     
     // call backend
 }
+#endif
 
 @end
