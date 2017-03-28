@@ -2,7 +2,7 @@
 //  Question.h
 //  PolyCam
 //
-//  Created by Aditya Narayan on 2/2/17.
+//  Created by Alex Savitt on 2/2/17.
 //  Copyright © 2017 bl. All rights reserved.
 //
 

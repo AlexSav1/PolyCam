@@ -2,18 +2,32 @@
 //  BackEnd.m
 //  PolyCam
 //
-//  Created by Aditya Narayan on 2/2/17.
+//  Created by Alex Savitt on 2/2/17.
 //  Copyright © 2017 bl. All rights reserved.
 //
 
 #import "BackEnd.h"
 #import "Question.h"
 #import "Key.h"
+#import "AppDelegate.h"
 
 @implementation BackEnd
 
+//-(void) fetchFromDatabase{
+//    
+//    self.ref = [[FIRDatabase database] reference];
+//    
+//    [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+//        NSDictionary *postDict = snapshot.value;
+//        NSLog(@"%@", postDict);
+//    }];
+//    
+//}
+
 -(void) sendToEmotionAPI: (NSData*) imageData{
     
+    
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     
     //Create session, URL, and request objects
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
@@ -23,8 +37,9 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     //Set content type and key
+
     request.HTTPBody = imageData;
-    [request addValue:APIkey forHTTPHeaderField:@"Ocp-Apim-Subscription-Key"];
+    [request addValue:appDelegate.APIKEY forHTTPHeaderField:@"Ocp-Apim-Subscription-Key"];
     [request addValue:@"application/octet-stream" forHTTPHeaderField:@"Content-Type"];
     request.HTTPMethod = @"POST";
  

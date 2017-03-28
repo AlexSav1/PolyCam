@@ -49,6 +49,7 @@ alpha:1.0]
     // Mediator
     _mediator = [Mediator sharedInstance];
     _mediator.delegate = self;
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {

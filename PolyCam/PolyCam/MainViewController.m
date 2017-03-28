@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "CamViewController.h"
 #import "StatViewController.h"
+#import "AppDelegate.h"
 
 
 @interface MainViewController ()
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%f",[[self view] bounds].size.width);
+
     
     self.view.backgroundColor = [UIColor blackColor];
 
