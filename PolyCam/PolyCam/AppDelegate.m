@@ -28,7 +28,6 @@
         
         NSLog(@"Initial DATA: %@", postDict);
         
-        
         self.APIKEY = [postDict objectForKey:@"key"];
         
         NSLog(@"DATA: %@", self.APIKEY);

@@ -13,16 +13,6 @@
 
 @implementation BackEnd
 
-//-(void) fetchFromDatabase{
-//    
-//    self.ref = [[FIRDatabase database] reference];
-//    
-//    [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-//        NSDictionary *postDict = snapshot.value;
-//        NSLog(@"%@", postDict);
-//    }];
-//    
-//}
 
 -(void) sendToEmotionAPI: (NSData*) imageData{
     

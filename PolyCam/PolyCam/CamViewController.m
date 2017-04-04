@@ -38,11 +38,13 @@ alpha:1.0]
     // Header
     self.tipLabel.layer.masksToBounds = YES;
     self.tipLabel.layer.cornerRadius = 20.0;
+
+    self.dismissLabel.hidden = true;
     
     // Btn
     UIImage *snapBtnImage = [UIImage imageNamed:@"snapBtn.png"];
     [self.snapBtn setImage:snapBtnImage forState:UIControlStateNormal];
-    [self.okBtn setImage:snapBtnImage forState:UIControlStateNormal];
+    //[self.okBtn setImage:snapBtnImage forState:UIControlStateNormal];
     UIImage *statsBtnImage = [UIImage imageNamed:@"stats.png"];
     [self.statBtn setImage:statsBtnImage forState:UIControlStateNormal];
     
@@ -120,6 +122,8 @@ alpha:1.0]
                 UIImage *image = [UIImage imageWithData: imageData];
                 self.previewView.image = image;
                 self.previewView.alpha = 1;
+                
+                //self.snapBtn.backgroundColor = [UIColor greenColor];
                 [self showLoadingOverlay];
                 [_mediator processPhoto:image];
             }
@@ -127,6 +131,23 @@ alpha:1.0]
    
     } else {
         self.previewView.alpha = 0;
+        self.dismissLabel.hidden = TRUE;
+        
+        self.tipLabel.text = @"TIP";
+        self.tipLabel.backgroundColor = [UIColor whiteColor];
+        self.tipLabel.textColor = [UIColor darkGrayColor];
+        self.tickerView.backgroundColor = [UIColor blackColor];
+        self.feedbackLabel.text = @"";
+        self.feedbackLabel.textColor = [UIColor whiteColor];
+        self.questionLabel.text = @"Snap when your subject is answering";
+        
+        //self.tipLabel.text = @"LIE";
+        //self.tipLabel.backgroundColor = UIColorFromRGB(0xdd7684);
+        //self.tickerView.backgroundColor = UIColorFromRGB(0xac0101);
+       // self.feedbackLabel.text = @"LIKELY LYING";
+       // self.feedbackLabel.textColor = UIColorFromRGB(0xdd7684);
+        
+        //self.snapBtn.backgroundColor = [UIColor clearColor];
     }
     
 }
@@ -211,11 +232,11 @@ alpha:1.0]
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5];
     [self.loadingView setAlpha:0];
+    self.dismissLabel.hidden = FALSE;
+    //self.snapBtn.backgroundColor = [UIColor greenColor];
+    //self.snapBtn.imageView.image = nil;
+    //self.snapBtn.titleLabel.text = @"OK";
     [UIView commitAnimations];
-}
-- (IBAction)okBtnPrsd:(id)sender {
-    self.okBtn.hidden = TRUE;
-    self.previewView.alpha = 0;
 }
 
 @end

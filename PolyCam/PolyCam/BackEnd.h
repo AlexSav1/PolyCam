@@ -20,12 +20,6 @@
 
 @property (nonatomic) id <BackEndDelegate> delegate;
 
-@property (strong, nonatomic) FIRDatabaseReference *ref;
-
-//@property NSString *key;
-
-//-(void) fetchFromDatabase;
-
 -(void) sendToEmotionAPI: (NSData*) imageData;
 
 @end
