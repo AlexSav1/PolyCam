@@ -233,10 +233,10 @@ alpha:1.0]
     [UIView setAnimationDuration:0.5];
     [self.loadingView setAlpha:0];
     self.dismissLabel.hidden = FALSE;
-    //self.snapBtn.backgroundColor = [UIColor greenColor];
-    //self.snapBtn.imageView.image = nil;
-    //self.snapBtn.titleLabel.text = @"OK";
     [UIView commitAnimations];
+}
+- (IBAction)statButtonPressed:(id)sender {
+    [self.delegate shiftToStatView];
 }
 
 @end

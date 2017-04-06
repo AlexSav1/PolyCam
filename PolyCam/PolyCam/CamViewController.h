@@ -10,7 +10,15 @@
 #import <AVFoundation/AVFoundation.h>
 #import "Mediator.h"
 
+@protocol CamViewDelegate <NSObject>
+
+- (void) shiftToStatView;
+
+@end
+
 @interface CamViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, MediatorDelegate>
+
+@property (nonatomic) id <CamViewDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIView *tickerView;
