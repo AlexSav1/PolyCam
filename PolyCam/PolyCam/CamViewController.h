@@ -10,7 +10,15 @@
 #import <AVFoundation/AVFoundation.h>
 #import "Mediator.h"
 
+@protocol CamViewDelegate <NSObject>
+
+- (void) shiftToStatView;
+
+@end
+
 @interface CamViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, MediatorDelegate>
+
+@property (nonatomic) id <CamViewDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIView *tickerView;
@@ -28,7 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *snapBtn;
 @property (weak, nonatomic) IBOutlet UIButton *statBtn;
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
-@property (weak, nonatomic) IBOutlet UIButton *okBtn;
+@property (weak, nonatomic) IBOutlet UILabel *dismissLabel;
 
 // Video Related Assets
 @property (strong, nonatomic) AVCaptureSession *captureSession;

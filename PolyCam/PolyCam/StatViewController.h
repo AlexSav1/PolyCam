@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol StatViewDelegate <NSObject>
+
+- (void) shiftToCamView;
+
+@end
+
 @interface StatViewController : UIViewController<UIScrollViewDelegate>
+
+@property (nonatomic) id <StatViewDelegate> delegate;
 
 // UI
 @property (weak, nonatomic) IBOutlet UIImageView *statsIconImageView;

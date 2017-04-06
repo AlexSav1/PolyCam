@@ -7,8 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import "CamViewController.h"
-#import "StatViewController.h"
 #import "AppDelegate.h"
 
 
@@ -23,6 +21,7 @@
     NSLog(@"%f",[[self view] bounds].size.width);
 
     
+    
     self.view.backgroundColor = [UIColor blackColor];
 
 }
@@ -31,29 +30,31 @@
 {
     [super viewWillAppear:animated];
     
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    scrollView.bounces = NO;
-    scrollView.scrollEnabled = YES;
-    scrollView.userInteractionEnabled = YES;
-    scrollView.pagingEnabled = YES;
+    self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    self.scrollView.bounces = NO;
+    self.scrollView.scrollEnabled = YES;
+    self.scrollView.userInteractionEnabled = YES;
+    self.scrollView.pagingEnabled = YES;
     
-    [self.view addSubview:scrollView];
-    scrollView.contentSize = CGSizeMake((self.view.frame.size.width * 2), self.view.frame.size.height);
+    [self.view addSubview:self.scrollView];
+    self.scrollView.contentSize = CGSizeMake((self.view.frame.size.width * 2), self.view.frame.size.height);
     
     // Create the two VCs- camVC & statVC
     CamViewController *camVC = [[CamViewController alloc]init];
     StatViewController *statVC = [[StatViewController alloc]init];
+    camVC.delegate = self;
+    statVC.delegate = self;
     
-    scrollView.delegate = statVC;
+    self.scrollView.delegate = statVC;
     
     [self addChildViewController:camVC];
-    [scrollView addSubview: camVC.view];
+    [self.scrollView addSubview: camVC.view];
     camVC.view.frame = self.view.frame;
     [camVC didMoveToParentViewController:self];
     // camVC.view.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self addChildViewController:statVC];
-    [scrollView addSubview: statVC.view];
+    [self.scrollView addSubview: statVC.view];
     statVC.view.frame = self.view.frame;
     [statVC didMoveToParentViewController:self];
     // statVC.view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -63,6 +64,20 @@
     statFrame.origin.x = self.view.frame.size.width;
     NSLog(@"%f",[[self view] bounds].size.width);
     statVC.view.frame = statFrame;
+    
+}
+
+- (void) shiftToStatView{
+    CGRect newFrame = self.view.frame;
+    newFrame.origin.x = self.view.frame.size.width;
+    
+    [self.scrollView scrollRectToVisible:newFrame animated:TRUE];
+}
+
+-(void) shiftToCamView{
+    
+    [self.scrollView scrollRectToVisible:self.view.frame animated:TRUE];
+    
 }
 
 #if 0

@@ -107,6 +107,12 @@ alpha:1.0]
     [self.questionsTableView reloadData];
 }
 
+- (IBAction)camButtonPressed:(id)sender {
+    
+    [self.delegate shiftToCamView];
+    
+}
+
 /*
 #pragma mark - Navigation
 

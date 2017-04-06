@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CamViewController.h"
+#import "StatViewController.h"
 
-@interface MainViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface MainViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, CamViewDelegate, StatViewDelegate>
+
+@property UIScrollView *scrollView;
 
 @end
 
