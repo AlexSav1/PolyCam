@@ -78,7 +78,9 @@ alpha:1.0]
     if ([self.captureSession canAddInput:deviceInput]) {
         [self.captureSession addInput:deviceInput];
         
-         self.imageOutput = [[AVCaptureStillImageOutput alloc]init];
+        self.imageOutput = [[AVCaptureStillImageOutput alloc]init];
+        self.photoOutput = [[AVCapturePhotoOutput alloc]init];
+        
         self.imageOutput.outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey, nil];
         
         if ([self.captureSession canAddOutput:self.imageOutput]) {

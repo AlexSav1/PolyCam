@@ -41,14 +41,15 @@
 // Video Related Assets
 @property (strong, nonatomic) AVCaptureSession *captureSession;
 @property (strong, nonatomic) AVCaptureStillImageOutput *imageOutput;
+@property (strong, nonatomic) AVCapturePhotoOutput *photoOutput;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *previewLayer;
 
 // Actions
 - (IBAction)snapBtnPrsd:(id)sender;
-- (IBAction)testBtnPrsd:(id)sender;
-- (IBAction)testLoadingBtnPrsd:(id)sender;
-- (IBAction)dismissLoading:(id)sender;
-- (IBAction)okBtnPrsd:(id)sender;
+//- (IBAction)testBtnPrsd:(id)sender;
+//- (IBAction)testLoadingBtnPrsd:(id)sender;
+//- (IBAction)dismissLoading:(id)sender;
+//- (IBAction)okBtnPrsd:(id)sender;
 
 
 @end
